@@ -1,0 +1,113 @@
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+local MarketplaceService = game:GetService("MarketplaceService")
+local HttpService = game:GetService("HttpService")
+
+local Module = {}
+
+local function TimestampToMillis(Timestamp: string | number | DateTime)
+    if typeof(Timestamp) == "string" then
+        return DateTime.fromIsoDate(Timestamp).UnixTimestampMillis
+    elseif typeof(Timestamp) == "number" then
+        return Timestamp
+    else
+        return Timestamp.UnixTimestampMillis
+    end
+end
+
+Module.Require = function(SourcePath: string): any?
+    local Content
+    if SourcePath:lower():sub(1, 4) == "http" then
+        Content = game:HttpGet(SourcePath)
+    elseif isfile(SourcePath) then
+        Content = readfile(SourcePath)
+    end
+    
+    if Content then
+        local LoadedFunction, ErrorMessage = loadstring(Content)
+        if not LoadedFunction then
+            return nil
+        end
+        return LoadedFunction()
+    end
+    return nil
+end
+
+Module.LoadCustomAsset = function(AssetUrl: string): string?
+    if getcustomasset then
+        if AssetUrl:lower():sub(1, 4) == "http" then
+            local FileName = `temp_{tick()}.txt`
+            writefile(FileName, game:HttpGet(AssetUrl))
+            local AssetPath = getcustomasset(FileName, true)
+            delfile(FileName)
+            return AssetPath
+        elseif isfile(AssetUrl) then
+            return getcustomasset(AssetUrl, true)
+        end
+    end
+    
+    if AssetUrl:find("rbxassetid") or tonumber(AssetUrl) then
+        return "rbxassetid://" .. AssetUrl:match("%d+")
+    end
+    
+    return nil
+end
+
+Module.LoadCustomInstance = function(InstanceUrl: string): Instance?
+    local Success, Result = pcall(function()
+        return game:GetObjects(Module.LoadCustomAsset(InstanceUrl))[1]
+    end)
+    return Success and Result or nil
+end
+
+Module.GetGameLastUpdate = function(): DateTime
+    local Success, ProductInfo = pcall(function()
+        return MarketplaceService:GetProductInfo(game.PlaceId)
+    end)
+    if Success and ProductInfo then
+        return DateTime.fromIsoDate(ProductInfo.Updated)
+    end
+    return DateTime.now()
+end
+
+Module.HasGameUpdated = function(LastTimestamp: string | number | DateTime): boolean
+    local LastMillis = TimestampToMillis(LastTimestamp)
+    if LastMillis then
+        return LastMillis < Module.GetGameLastUpdate().UnixTimestampMillis
+    end
+    return false
+end
+
+Module.GetGitLastUpdate = function(RepositoryOwner: string, RepositoryName: string, FilePath: string): DateTime
+    local ApiUrl = `https://api.github.com/repos/{RepositoryOwner}/{RepositoryName}/commits?per_page=1&path={FilePath}`
+    local Success, Response = pcall(function()
+        return HttpService:JSONDecode(game:HttpGet(ApiUrl))
+    end)
+    
+    if Success and Response and Response[1] and Response[1].commit then
+        return DateTime.fromIsoDate(Response[1].commit.committer.date)
+    end
+    
+    return DateTime.now()
+end
+
+Module.HasGitUpdated = function(RepositoryOwner: string, RepositoryName: string, FilePath: string, LastTimestamp: string | number | DateTime): boolean
+    local LastMillis = TimestampToMillis(LastTimestamp)
+    if LastMillis then
+        return LastMillis < Module.GetGitLastUpdate(RepositoryOwner, RepositoryName, FilePath).UnixTimestampMillis
+    end
+    return false
+end
+
+Module.TruncateNumber = function(Number: number, DecimalPlaces: number): number
+    local Shift = 10 ^ (DecimalPlaces and math.max(DecimalPlaces, 0) or 0)
+    return Number * Shift // 1 / Shift
+end
+
+for FunctionName, Function in next, Module do
+    if typeof(Function) == "function" then
+        getgenv()[FunctionName] = Function
+    end
+end
+
+return Module

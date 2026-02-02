@@ -11,10 +11,10 @@ local ModuleScripts = {
     Achievements = require(ReplicatedStorage.ModulesShared.Achievements)
 }
 local Default = {
-    Title = "Title",
-    Desc = "Description",
-    Reason = "Reason",
-    Image = "rbxassetid://12309073114"
+    Title = "",
+    Desc = "",
+    Reason = "",
+    Image = ""
 }
 
 return function(Info)

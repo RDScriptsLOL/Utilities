@@ -1,0 +1,32 @@
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local Player = Players.LocalPlayer
+local PlayerGui = Player:FindFirstChild("PlayerGui") if not PlayerGui then return end
+local GlobalUI = PlayerGui:FindFirstChild("GlobalUI") if not GlobalUI then return end
+local AchievementsHolder = GlobalUI:FindFirstChild("AchievementsHolder") if not AchievementsHolder then return end
+
+local ModuleScripts = {
+    AchievementUnlock = require(PlayerGui:FindFirstChild("AchievementUnlock", true)),
+    Achievements = require(ReplicatedStorage.ModulesShared.Achievements)
+}
+local Default = {
+    Title = "Title",
+    Desc = "Description",
+    Reason = "Reason",
+    Image = "rbxassetid://12309073114"
+}
+
+return function(Info)
+    Info = (type(Info) == "table") and Info or {}
+    for i, v in Default do
+        if Info[i] == nil then
+            Info[i] = v
+        end
+    end
+    local Stuff = ModuleScripts.Achievements.SpecialQATester
+    local Old = Stuff.GetInfo
+    Stuff.GetInfo = newcclosure(function() return Info end)
+    ModuleScripts.AchievementUnlock(nil, Stuff.Name)
+    Stuff.GetInfo = Old
+end

@@ -308,50 +308,53 @@ function UnlockAchievement(achievement, entityTable, achievementType)
         return
     end
 
-    if makefolder and isfolder and writefile and isfile then
-        local achievementInfo = {
-            Title = title,
-            Desc = achievement.Desc,
-            Reason = achievement.Reason,
-            Image = achievement.Image,
-            Prize = {}
-        }
-        achievementGiver(achievementInfo)
-
-		local basePath = "Scripts Mode"
-		if not isfolder(basePath) then
-			makefolder(basePath)
-		end
-		
-		local modePath = basePath .. "/Mode"
-		if not isfolder(modePath) then
-			makefolder(modePath)
-		end
-		
-		local entityModePath = modePath .. "/" .. mode
-		if not isfolder(entityModePath) then
-			makefolder(entityModePath)
-		end
-		
-		local fileName = achievementType .. "_" .. entityName .. ".txt"
-		local achievementFile = entityModePath .. "/" .. fileName
-		
-		if isfile(achievementFile) then
-			return
-		end
-		
-		local achievementData = {
-			Title = title,
-			Desc = achievement.Desc or "",
-			Reason = achievement.Reason or ""
-		}
-		
-		local dataString = "Title: " .. (achievementData.Title or "") .. "\n" ..
-						  "Desc: " .. (achievementData.Desc or "") .. "\n" ..
-						  "Reason: " .. (achievementData.Reason or "")
-		
-		writefile(achievementFile, dataString)
+    if not makefolder or not isfolder or not writefile or not isfile then
+        return
     end
+    
+    local basePath = "Scripts Mode"
+    if not isfolder(basePath) then
+        makefolder(basePath)
+    end
+    
+    local modePath = basePath .. "/Mode"
+    if not isfolder(modePath) then
+        makefolder(modePath)
+    end
+    
+    local entityModePath = modePath .. "/" .. mode
+    if not isfolder(entityModePath) then
+        makefolder(entityModePath)
+    end
+    
+    local fileName = achievementType .. "_" .. entityName .. ".txt"
+    local achievementFile = entityModePath .. "/" .. fileName
+    
+    if isfile(achievementFile) then
+        return
+    end
+    
+    local achievementData = {
+        Title = title,
+        Desc = achievement.Desc or "",
+        Reason = achievement.Reason or ""
+    }
+    
+    local dataString = "Title: " .. (achievementData.Title or "") .. "\n" ..
+                      "Desc: " .. (achievementData.Desc or "") .. "\n" ..
+                      "Reason: " .. (achievementData.Reason or "")
+    
+    writefile(achievementFile, dataString)
+    
+    local achievementInfo = {
+        Title = title,
+        Desc = achievement.Desc,
+        Reason = achievement.Reason,
+        Image = achievement.Image,
+        Prize = {}
+    }
+    
+    achievementGiver(achievementInfo)
 end
 
 function PlayerHasItemEquipped(name)

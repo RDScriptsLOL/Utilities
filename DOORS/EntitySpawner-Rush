@@ -1,3 +1,5 @@
+if EntitySpawner then return EntitySpawner end
+
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
@@ -103,7 +105,8 @@ local defaultDebug = {
 	OnDespawning = function() end,
 	OnDespawned = function() end,
 	OnDamagePlayer = function() end,
-	OnCrucified = function() end
+	OnCrucified = function() end,
+	CrucifixionOverwrite = ""
 }
 
 local defaultConfig = {
@@ -201,11 +204,11 @@ function CloneTable(tbl)
     return cloned
 end
 
-function OnCharacterAdded(Character)
+function OnCharacterAdded(char)
 	lastRespawn = tick()
-	Player.Character = Character
-	localHum = Character:WaitForChild("Humanoid")
-	localCollision = Character:WaitForChild("Collision")
+	localChar = char
+	localHum = char:WaitForChild("Humanoid")
+	localCollision = char:WaitForChild("Collision")
 end
 
 function GetCurrentRoom(latest)
@@ -305,7 +308,7 @@ function UnlockAchievement(achievement, entityTable, achievementType)
         return
     end
 
-    if not makefolder or not isfolder or not writefile or not isfile then
+    if makefolder and isfolder and writefile and isfile then
         local achievementInfo = {
             Title = title,
             Desc = achievement.Desc,
@@ -314,52 +317,41 @@ function UnlockAchievement(achievement, entityTable, achievementType)
             Prize = {}
         }
         achievementGiver(achievementInfo)
-        return
+
+		local basePath = "Scripts Mode"
+		if not isfolder(basePath) then
+			makefolder(basePath)
+		end
+		
+		local modePath = basePath .. "/Mode"
+		if not isfolder(modePath) then
+			makefolder(modePath)
+		end
+		
+		local entityModePath = modePath .. "/" .. mode
+		if not isfolder(entityModePath) then
+			makefolder(entityModePath)
+		end
+		
+		local fileName = achievementType .. "_" .. entityName .. ".txt"
+		local achievementFile = entityModePath .. "/" .. fileName
+		
+		if isfile(achievementFile) then
+			return
+		end
+		
+		local achievementData = {
+			Title = title,
+			Desc = achievement.Desc or "",
+			Reason = achievement.Reason or ""
+		}
+		
+		local dataString = "Title: " .. (achievementData.Title or "") .. "\n" ..
+						  "Desc: " .. (achievementData.Desc or "") .. "\n" ..
+						  "Reason: " .. (achievementData.Reason or "")
+		
+		writefile(achievementFile, dataString)
     end
-    
-    local basePath = "Scripts Mode"
-    if not isfolder(basePath) then
-        makefolder(basePath)
-    end
-    
-    local modePath = basePath .. "/Mode"
-    if not isfolder(modePath) then
-        makefolder(modePath)
-    end
-    
-    local entityModePath = modePath .. "/" .. mode
-    if not isfolder(entityModePath) then
-        makefolder(entityModePath)
-    end
-    
-    local fileName = achievementType .. "_" .. entityName .. ".txt"
-    local achievementFile = entityModePath .. "/" .. fileName
-    
-    if isfile(achievementFile) then
-        return
-    end
-    
-    local achievementData = {
-        Title = title,
-        Desc = achievement.Desc or "",
-        Reason = achievement.Reason or ""
-    }
-    
-    local dataString = "Title: " .. (achievementData.Title or "") .. "\n" ..
-                      "Desc: " .. (achievementData.Desc or "") .. "\n" ..
-                      "Reason: " .. (achievementData.Reason or "")
-    
-    writefile(achievementFile, dataString)
-    
-    local achievementInfo = {
-        Title = title,
-        Desc = achievement.Desc,
-        Reason = achievement.Reason,
-        Image = achievement.Image,
-        Prize = {}
-    }
-    
-    achievementGiver(achievementInfo)
 end
 
 function PlayerHasItemEquipped(name)
@@ -582,7 +574,7 @@ function CrucifixEntity(entityTable, tool)
 end
 
 function PlayerIsProtected()
-    return (tick() - lastRespawn) <= localPlayer:GetAttribute("SpawnProtection")
+	return (tick() - lastRespawn) <= localPlayer:GetAttribute("SpawnProtection")
 end
 
 function SetDeathHints(entityTable)
@@ -616,9 +608,7 @@ function SetDeathHints(entityTable)
 	
 	if #deathHints > 0 then
 		if firesignal then
-			RunService.Heartbeat:Connect(function()
-				firesignal(remotesFolder.DeathHint.OnClientEvent, deathHints, deathType)
-			end)
+			firesignal(remotesFolder.DeathHint.OnClientEvent, deathHints, deathType)
 		else
 			warn("firesignal not supported, ignore death hints.")
 		end
@@ -642,7 +632,7 @@ function DamagePlayer(entityTable)
 			UnlockAchievement(deathAchievement, entityTable, "Death")
 			SetDeathHints(entityTable)
 			
-			task.spawn(entityTable.RunCallback, entityTable, "OnDamagePlayer", 0, math.huge, false)
+			task.spawn(entityTable.RunCallback, entityTable, "OnDamagePlayer", 0, math.huge, false) 
 		else
 			local damageAmount;
 			if config.Damage.Random.Enabled then
@@ -803,7 +793,7 @@ end
 
 spawner.Create = function(config)
 	ApplyConfigDefaults(config, defaultConfig)
-	config.Movement.Speed = BaseEntitySpeed / 100 * config.Movement.Speed 和直接 
+	config.Movement.Speed = BaseEntitySpeed / 100 * config.Movement.Speed
 	
 	local asset = config.Model.Assets
 	local success, entityModel;

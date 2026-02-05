@@ -255,7 +255,7 @@ function GetNodesFromRoom(room, reversed)
 	return nodes
 end
 
-function GetPathfindNodesAmbush(config)
+function GetPathfindNodes(config)
 	local pathfindNodes = {}
     local rooms = workspace.CurrentRooms:GetChildren()
     if config.Movement.Reversed == false then
@@ -971,7 +971,7 @@ spawner.Run = function(entityTable)
 		
 						
 						for i = #pathfindNodes, 1, -1 do
-							local cframe = pathfindNodes[i].CFrame + Vector3.new(0, 3 + config.Model.HeightOffset, 0)
+							local cframe = pathfindNodes[i].CFrame + Vector3.new(0, 3 + config.Entity.HeightOffset, 0)
 							EntityMoveTo(model, cframe, config.Movement.Speed)
 							task.spawn(entityTable.RunCallback, entityTable, "OnReachNode", n) 
 						end

@@ -19,13 +19,13 @@ local lastRespawn;
 local BaseEntitySpeed = 65
 local colourGuiding = Color3.fromRGB(137, 207, 255)
 
-local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/model/main/ccc"))()
+local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
 
 if not _G.achievementUnlock then
     _G.achievementUnlock = {}
 end
 
-local Modules = {Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))()}
+local Modules = {Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/Universal/UtilityModule"))()}
 local assets = {Repentance = LoadCustomInstance("https://github.com/RegularVynixu/Utilities/raw/main/Doors/Entity%20Spawner/Assets/Repentance.rbxm")}
 local moduleScripts = {
 	Module_Events = require(ReplicatedStorage.ModulesClient.Module_Events),
@@ -573,10 +573,10 @@ function DamagePlayer(entityTable)
 				else 
 					newHealth = config.Damage.Amount
 				end
-				if config.Damage.MaxHeath then 
-					localHum.MaxHealth - newHealth
+				if config.Damage.MaxHeath > 0 then 
+					localHum.MaxHealth = localHum.MaxHealth - newHealth
 				else
-					if localHum.Health < config.Damage.Amount then 
+					if localHum.Health <= config.Damage.Amount then 
 						UnlockAchievement(deathAchievement, entityTable, "Death")
 						SetDeathHints(entityTable)
 						if replicatesignal then 
@@ -585,6 +585,8 @@ function DamagePlayer(entityTable)
 							localHum.Health = 0
 							localPlayer:SetAttribute("Alive", false)
 						end
+					else 
+						localHum.Health = localHum.Health - newHealth
 					end
 				end
 				task.spawn(entityTable.RunCallback, entityTable, "OnDamagePlayer", 0, 0, false)

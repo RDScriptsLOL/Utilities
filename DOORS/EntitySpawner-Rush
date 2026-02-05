@@ -544,6 +544,7 @@ function SetDeathHints(entityTable)
 end
 
 function DamagePlayer(entityTable)
+	local config = entityTable.Config
 	if config.Damage.Enabled then   
 		if localHum.Health > 0 and not PlayerIsProtected() then 
 			local config = entityTable.Config
@@ -951,7 +952,6 @@ spawner.Run = function(entityTable)
 					task.wait()
 				end
 			end)
-			
 			
 			task.spawn(function()
 				local pathfindNodes = GetPathfindNodes(config)

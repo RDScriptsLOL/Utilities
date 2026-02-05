@@ -293,10 +293,9 @@ function PlayerInLineOfSight(model, config)
 	return false
 end
 
-function UnlockAchievement(achievement, entityTable, achievementType)
-    if not achievement or not achievement.Enabled then return end
-
-    local config = entityTable.Config
+function UnlockAchievement(achievement, achievementType)
+    if not achievement or not achievement.Enabled then return end 
+	
     local mode = config.Model.Mode
     if not mode or mode == "" then
         return
@@ -551,7 +550,7 @@ function DamagePlayer(entityTable)
 			local deathAchievement = config.Achievements.Death
 	
 			if config.Damage.Amount == math.huge then  
-				UnlockAchievement(deathAchievement, entityTable, "Death")
+				UnlockAchievement(deathAchievement, "Death")
 				SetDeathHints(entityTable)
 				if replicatesignal then 
 					replicatesignal(localPlayer.Kill)
@@ -578,7 +577,7 @@ function DamagePlayer(entityTable)
 					localHum.MaxHealth = localHum.MaxHealth - newHealth
 				else
 					if localHum.Health <= config.Damage.Amount then 
-						UnlockAchievement(deathAchievement, entityTable, "Death")
+						UnlockAchievement(deathAchievement, "Death")
 						SetDeathHints(entityTable)
 						if replicatesignal then 
 							replicatesignal(localPlayer.Kill)
@@ -808,7 +807,7 @@ spawner.Create = function(config)
 					task.spawn(self.RunCallback, self, "OnDespawned") 
 					local surviveAchievement = config.Achievements.Survive
                     if surviveAchievement.Enabled and localHum.Health > 0 then
-                        UnlockAchievement(surviveAchievement, entityTable, "Survive")
+                        UnlockAchievement(surviveAchievement, "Survive")
                     end
 				end
 			end

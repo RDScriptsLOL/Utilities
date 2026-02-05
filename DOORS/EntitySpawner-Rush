@@ -545,7 +545,7 @@ end
 
 function DamagePlayer(entityTable)
 	if config.Damage.Enabled then   
-		if localHum.Health > 0 then not PlayerIsProtected() then 
+		if localHum.Health > 0 and not PlayerIsProtected() then 
 			local config = entityTable.Config
 			local deathAchievement = config.Achievements.Death
 	

@@ -28,7 +28,7 @@ end
 
 local ambientStorage = {}
 local spawner = {}
-local Modules = {Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/Universal/UtilityModule"))()
+local Modules = {Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/Universal/UtilityModule"))()}
 local assets = {Repentance = LoadCustomInstance("https://github.com/RegularVynixu/Utilities/raw/main/Doors/Entity%20Spawner/Assets/Repentance.rbxm")}
 local moduleScripts = {
 	Module_Events = require(ReplicatedStorage.ModulesClient.Module_Events),

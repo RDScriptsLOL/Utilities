@@ -75,6 +75,7 @@ local defaultConfig = {
     },
 	Damage = {
         Enabled = true,
+		IgnoreHiding = true,
         Range = 100,
         Amount = math.huge,
         MaxHeath = false,
@@ -934,9 +935,16 @@ spawner.Run = function(entityTable)
 
 						if not model:GetAttribute("Paused") and not usedCrucifix then
 							local c = config.Damage
-							if c.Enabled and c.Range > 0 and localHum.Health > 0 and not localChar:GetAttribute("Hiding") and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
-								model:SetAttribute("Damage", false)
-								DamagePlayer(entityTable)
+							if not c.IgnoreHiding then
+								if c.Enabled and c.Range > 0 and localHum.Health > 0 and not localChar:GetAttribute("Hiding") and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
+									model:SetAttribute("Damage", false)
+									DamagePlayer(entityTable)
+								end
+							else
+								if c.Enabled and c.Range > 0 and localHum.Health > 0 and model:GetAttribute("Damage") and not model:GetAttribute("BeingBanished") and (charPivot.Position - pivot.Position).Magnitude <= c.Range and inSight then
+									model:SetAttribute("Damage", false)
+									DamagePlayer(entityTable)
+								end
 							end
 						end
 

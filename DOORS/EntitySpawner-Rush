@@ -539,17 +539,17 @@ function SetDeathHints(entityTable)
 		local newDeathHints = {}
 		
 		for _, line in ipairs(SelectedStart) do
-			table.insert(newDeathHints, line)
+			table.insert(newDeathHints, string.upper(line))
 		end
 		
 		if config.Death.Visions and #config.Death.Visions > 0 then
 			for _, hint in ipairs(config.Death.Visions) do
-				table.insert(newDeathHints, hint)
+				table.insert(newDeathHints, string.upper(hint))
 			end
 		end
 		
 		for _, line in ipairs(SelectedEnd) do
-			table.insert(newDeathHints, line)
+			table.insert(newDeathHints, string.upper(line))
 		end
 		
 		deathHints = newDeathHints

@@ -331,13 +331,11 @@ function CrucifixEntity(entityTable, tool)
 	if not result then return end
 
 	model:SetAttribute("BeingBanished", true)
+	
+	localChar:FindFirstChild("Crucifix"):Destroy()
 	for _, Repent in pairs(model:GetDescendants()) do 
-		if Repent:IsA("Sound") and  then  
-			if Repent.Name == "Repent" then 
-				Repent:Play()
-			else 
-				Repent.Volume = 0
-			end
+		if Repent:IsA("Sound") and Repent.Name == "Repent" then 
+			Repent:Play()
 		end
 	end
 	local repentance = assets.Repentance:Clone()

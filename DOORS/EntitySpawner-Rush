@@ -292,7 +292,7 @@ function CrucifixEntity(entityTable, tool)
 
 	-- Setup
 	model:SetAttribute("BeingBanished", true)
-	localChar:FindFirstChild("Crucifix"):Destroy()
+
 	local repentance = assets.Repentance:Clone()
 	local crucifix = repentance.Crucifix
 	local pentagram = repentance.Pentagram

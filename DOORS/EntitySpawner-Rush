@@ -332,7 +332,11 @@ function CrucifixEntity(entityTable, tool)
 
 	model:SetAttribute("BeingBanished", true)
 	
-	localChar:FindFirstChild("Crucifix"):Destroy()
+	for _, Crucifix in pairs(localChar:GetChildren()) do 
+		if Crucifix:IsA("Tool") and Crucifix.Name == "Crucifix" then 
+			Crucifix:Destroy()
+		end
+	end
 	for _, Repent in pairs(model:GetDescendants()) do 
 		if Repent:IsA("Sound") and Repent.Name == "Repent" then 
 			Repent:Play()

@@ -1,4 +1,3 @@
-
 if EntitySpawner then return EntitySpawner end
 
 local Players = game:GetService("Players")
@@ -332,7 +331,6 @@ function CrucifixEntity(entityTable, tool)
 	if not result then return end
 
 	model:SetAttribute("BeingBanished", true)
-	localChar:FindFirstChild("Crucifix"):Destroy()
 	for _, Repent in pairs(model:GetDescendants()) do 
 		if Repent:IsA("Sound") and  then  
 			if Repent.Name == "Repent" then 

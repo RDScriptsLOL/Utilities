@@ -811,7 +811,7 @@ spawner.Create = function(config)
 				if callback then
 					local success, result = pcall(callback, ...)
 					if not success then
-						warn(("Error in callback: '%s' for entity: '%s':\n%s"):format(key, self.Config.Entity.Name, result))
+						warn(("Error in callback: '%s' for entity: '%s':\n%s"):format(key, self.Config.Model.Name, result))
 					end
 				end
 			end,

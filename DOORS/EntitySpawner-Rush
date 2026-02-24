@@ -29,7 +29,7 @@ end
 local ambientStorage = {}
 local spawner = {}
 local Modules = {Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/Universal/UtilityModule"))()}
-local assets = {Repentance = LoadCustomInstance("https://github.com/RegularVynixu/Utilities/raw/main/Doors/Entity%20Spawner/Assets/Repentance.rbxm")}
+local assets = {Repentance = LoadCustomInstance("https://github.com/Focuslol666/Utilities/blob/patch-1/Doors/Entity%20Spawner/Assets/Repentance.rbxm?raw=true")}
 local moduleScripts = {
 	Module_Events = require(ReplicatedStorage.ModulesClient.Module_Events),
 	Main_Game = require(playerGui.MainUI.Initiator.Main_Game),
@@ -320,6 +320,7 @@ function CrucifixEntity(entityTable, tool)
 	local config = entityTable.Config
 
 	local resist = config.Crucifixion.Resist
+	local crucifixAchievement = config.Achievements.Crucifix
 
 	local toolPivot = tool:GetPivot()
 	local entityPivot = model:GetPivot()
@@ -330,11 +331,18 @@ function CrucifixEntity(entityTable, tool)
 	local result = workspace:Raycast(entityPivot.Position, Vector3.new(0, -1000, 0), params)
 	if not result then return end
 
-	model:SetAttribute("BeingBanished", true)
-	
-	for _, Crucifix in pairs(localChar:GetChildren()) do 
-		if Crucifix:IsA("Tool") and Crucifix.Name == "Crucifix" then 
-			Crucifix:Destroy()
+	if tool and tool.Parent == localChar then
+		tool:Destroy()
+	end
+	local soundInstances = {}
+	for _, descendant in ipairs(model:GetDescendants()) do
+		if descendant:IsA("Sound") then
+			table.insert(soundInstances, {
+				instance = descendant,
+				wasPlaying = descendant.IsPlaying,
+				timePosition = descendant.TimePosition
+			})
+			descendant:Pause()
 		end
 	end
 	for _, Repent in pairs(model:GetDescendants()) do 
@@ -342,11 +350,16 @@ function CrucifixEntity(entityTable, tool)
 			Repent:Play()
 		end
 	end
+
+	model:SetAttribute("BeingBanished", true)
+	task.spawn(entityTable.RunCallback, entityTable, "OnCrucified", resist)
+
 	local repentance = assets.Repentance:Clone()
 	local crucifix = repentance.Crucifix
+	local crucHandle = crucifix.Handle
 	local pentagram = repentance.Pentagram
 	local entityPart = repentance.Entity
-	local sound = (config.Crucifixion.Resist and crucifix.SoundFail or crucifix.Sound)
+	local sound = (config.Crucifixion.Resist and crucHandle.SoundFail or crucHandle.Sound)
 	local shaker = moduleScripts.Main_Game.camShaker:StartShake(5, 20, 2, Vector3.new())
 
 	local function waitUntil(t)
@@ -376,12 +389,22 @@ function CrucifixEntity(entityTable, tool)
 			model:PivotTo(entityPart.CFrame)
 			task.wait()
 		end
-		model:Destroy()
+		if resist == false then
+			model:Destroy()
+		end
 	end)
 
 	TweenService:Create(pentagram.Circle, TweenInfo.new(2, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), { CFrame = pentagram.Circle.CFrame - Vector3.new(0, 25, 0) }):Play()
 	TweenService:Create(crucifix.BodyAngularVelocity, TweenInfo.new(4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), { AngularVelocity = Vector3.new(0, 40, 0) }):Play()
 	task.delay(2, pentagram.Circle.Destroy, pentagram.Circle)
+
+	task.spawn(function()
+		for _, d in repentance:GetDescendants() do
+			if d:IsA("Beam") then
+				d.Enabled = true
+			end
+		end
+	end)
 
 	task.spawn(function()
 		waitUntil(2.625)
@@ -424,17 +447,17 @@ function CrucifixEntity(entityTable, tool)
 		shaker:StartFadeOut(3)
 		task.spawn(function()
 			local color = Instance.new("Color3Value")
-			color.Value = Color3.fromRGB(137, 207, 255)
+			color.Value = guidingColor
 
 			local tween = TweenService:Create(color, TweenInfo.new(0.5, Enum.EasingStyle.Sine), { Value = Color3.fromRGB(255, 116, 130) })
 			tween:Play()
 
 			while tween.PlaybackState == Enum.PlaybackState.Playing do
 				for _, d in repentance:GetDescendants() do
-					if d.ClassName == "Beam" then
+					if d.ClassName == "Beam" or d.ClassName == "ParticleEmitter" then
 						d.Color = ColorSequence.new{ColorSequenceKeypoint.new(0, color.Value), ColorSequenceKeypoint.new(1, color.Value)}
 
-					elseif d.Name == "Crucifix" then
+					elseif d.Name == "Glow" then
 						d.Color = color.Value
 					end
 				end
@@ -442,21 +465,40 @@ function CrucifixEntity(entityTable, tool)
 			end
 		end)
 		waitUntil(9.625)
+		task.spawn(function()
+			for _, soundData in ipairs(soundInstances) do
+				if soundData.instance and soundData.instance.Parent then
+					if soundData.wasPlaying then
+						soundData.instance.TimePosition = soundData.timePosition
+						soundData.instance:Play()
+					end
+				end
+			end
+		end)
 	end
-
+	crucHandle.Shards:Destroy()
 	TweenService:Create(repentance.Crucifix, TweenInfo.new(1), { Size = repentance.Crucifix.Size * 3, Transparency = 1 }):Play()
 	TweenService:Create(repentance.Pentagram.Base.LightAttach.LightBright, TweenInfo.new(1), { Brightness = 0, Range = 0 }):Play()
 	TweenService:Create(repentance.Crucifix.Light, TweenInfo.new(1), { Brightness = 0, Range = 0 }):Play()
 
-	if not resist then
-		repentance.Crucifix.ExplodeParticle:Emit(math.random(20, 30))
+	if not resist then 
+		crucHandle.ExplodeParticle:Emit(math.random(20, 30))
 		moduleScripts.Main_Game.camShaker:ShakeOnce(7.5, 7.5, 0.25, 1.5)
+		UnlockAchievement(crucifixAchievement)
+		task.delay(5, repentance.Destroy, repentance)
 	else
 		model:SetAttribute("BeingBanished", false)
 		model:SetAttribute("Paused", false)
 		fadeOut()
+		UnlockAchievement(crucifixAchievement)
+		for _, d in repentance:GetDescendants() do
+			if d:IsA("Sound") then
+				d.Parent = model
+				d.Ended:Connect(d.Destory, d)
+			end
+		end
+		task.delay(1, repentance.Destroy, repentance)
 	end
-	task.delay(5, repentance.Destroy, repentance)
 end
 
 function PlayerIsProtected()

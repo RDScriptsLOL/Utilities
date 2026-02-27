@@ -357,7 +357,9 @@ function CrucifixEntity(entityTable, tool)
     end
 	model:SetAttribute("BeingBanished", true)
 	task.spawn(entityTable.RunCallback, entityTable, "OnCrucified", resist)
-
+	localChar:SetAttribute("Stunned", true)
+	localChar:SetAttribute("Stunned", false)
+	
 	local repentance = assets.Repentance:Clone()
 	local crucifix = repentance.Crucifix
 	local crucHandle = crucifix.Handle

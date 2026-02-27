@@ -447,7 +447,7 @@ function CrucifixEntity(entityTable, tool)
 	-- Actions
 	if resist == false then
 		waitUntil(2)
-		TweenService:Create(entityPart, TweenInfo.new(6, Enum.EasingStyle.Back, Enum.EasingDirection.In), { CFrame = repentance.Entity.CFrame - Vector3.new(0, 50, 0) }):Play()
+		TweenService:Create(entityPart, TweenInfo.new(3, Enum.EasingStyle.Back, Enum.EasingDirection.In), { CFrame = repentance.Entity.CFrame - Vector3.new(0, 50, 0) }):Play()
 		waitUntil(6.75)
 	else
 		waitUntil(4)

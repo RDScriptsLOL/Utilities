@@ -412,7 +412,7 @@ function CrucifixEntity(entityTable, tool)
 			Brightness = 5,
 			Range = 40
 		}):Play()
-		TweenService:Create(crucifix.Light, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
+		TweenService:Create(crucHandle.Light, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
 			Brightness = 11.25,
 			Range = 30
 		}):Play()
@@ -421,16 +421,16 @@ function CrucifixEntity(entityTable, tool)
 			Brightness = 0,
 			Range = 0
 		}):Play()
-		TweenService:Create(crucifix.Light, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
+		TweenService:Create(crucHandle.Light, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {
 			Brightness = 0,
 			Range = 0
 		}):Play()
 
 		if resist == false then
-			TweenService:Create(crucifix.Light, TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), { Brightness = 15, Range = 40 }):Play()
+			TweenService:Create(crucHandle.Light, TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), { Brightness = 15, Range = 40 }):Play()
 			shaker:StartFadeOut(3)
 			fadeOut()
-			TweenService:Create(crucifix.BodyAngularVelocity, TweenInfo.new(3, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), { AngularVelocity = Vector3.new() }):Play()
+			TweenService:Create(crucHandle.BodyAngularVelocity, TweenInfo.new(3, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), { AngularVelocity = Vector3.new() }):Play()
 		end
 	end)
 
@@ -441,9 +441,9 @@ function CrucifixEntity(entityTable, tool)
 		waitUntil(6.75)
 	else
 		waitUntil(4)
-		TweenService:Create(crucifix.BodyAngularVelocity, TweenInfo.new(3, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), { AngularVelocity = Vector3.new() }):Play()
+		TweenService:Create(crucHandle.BodyAngularVelocity, TweenInfo.new(3, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), { AngularVelocity = Vector3.new() }):Play()
 		TweenService:Create(pentagram.Base.LightAttach.LightBright, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), { Brightness = 0, Range = 0, Color = Color3.fromRGB(255, 116, 130) }):Play()
-		TweenService:Create(crucifix.Light, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), { Brightness = 0, Range = 0, Color = Color3.fromRGB(255, 116, 130) }):Play()
+		TweenService:Create(crucHandle.Light, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), { Brightness = 0, Range = 0, Color = Color3.fromRGB(255, 116, 130) }):Play()
 		shaker:StartFadeOut(3)
 		task.spawn(function()
 			local color = Instance.new("Color3Value")
@@ -477,9 +477,9 @@ function CrucifixEntity(entityTable, tool)
 		end)
 	end
 	crucHandle.Shards:Destroy()
-	TweenService:Create(repentance.Crucifix, TweenInfo.new(1), { Size = repentance.Crucifix.Size * 3, Transparency = 1 }):Play()
-	TweenService:Create(repentance.Pentagram.Base.LightAttach.LightBright, TweenInfo.new(1), { Brightness = 0, Range = 0 }):Play()
-	TweenService:Create(repentance.Crucifix.Light, TweenInfo.new(1), { Brightness = 0, Range = 0 }):Play()
+	TweenService:Create(crucHandle.Glow, TweenInfo.new(1), { Size = crucHandle.Glow.Size * 3, Transparency = 1 }):Play()
+	TweenService:Create(pentagram.Base.LightAttach.LightBright, TweenInfo.new(1), { Brightness = 0, Range = 0 }):Play()
+	TweenService:Create(crucHandle.Light, TweenInfo.new(1), { Brightness = 0, Range = 0 }):Play()
 
 	if not resist then 
 		crucHandle.ExplodeParticle:Emit(math.random(20, 30))

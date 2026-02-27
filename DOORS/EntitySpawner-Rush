@@ -378,7 +378,7 @@ function CrucifixEntity(entityTable, tool)
 	end
 
 	repentance:PivotTo(CFrame.new(result.Position))
-	crucifix.CFrame = toolPivot
+	crucifix:PivotTo(toolPivot)
 	repentance.Entity.CFrame = entityPivot
     crucifix.BodyPosition.Position = (localCollision.CFrame * CFrame.new(0.5, 3, -6)).Position
 	repentance.Parent = workspace

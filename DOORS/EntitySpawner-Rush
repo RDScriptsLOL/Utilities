@@ -357,8 +357,6 @@ function CrucifixEntity(entityTable, tool)
     end
 	model:SetAttribute("BeingBanished", true)
 	task.spawn(entityTable.RunCallback, entityTable, "OnCrucified", resist)
-	localChar:SetAttribute("Stunned", true)
-	localChar:SetAttribute("Stunned", false)
 	
 	local repentance = assets.Repentance:Clone()
 	local crucifix = repentance.Crucifix
@@ -399,6 +397,8 @@ function CrucifixEntity(entityTable, tool)
 			model:Destroy()
 		end
 	end)
+	localChar:SetAttribute("Stunned", true)
+	localChar:SetAttribute("Stunned", false)
 
 	TweenService:Create(pentagram.Circle, TweenInfo.new(2, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), { CFrame = pentagram.Circle.CFrame - Vector3.new(0, 25, 0) }):Play()
 	TweenService:Create(crucHandle.BodyAngularVelocity, TweenInfo.new(4, Enum.EasingStyle.Sine, Enum.EasingDirection.In), { AngularVelocity = Vector3.new(0, 40, 0) }):Play()
@@ -411,7 +411,7 @@ function CrucifixEntity(entityTable, tool)
 			end
 		end
 	end)
-
+	
 	task.spawn(function()
 		waitUntil(2.625)
 		TweenService:Create(pentagram.Base.LightAttach.LightBright, TweenInfo.new(1.5, Enum.EasingStyle.Circular, Enum.EasingDirection.InOut), {

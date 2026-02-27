@@ -350,7 +350,11 @@ function CrucifixEntity(entityTable, tool)
 			Repent:Play()
 		end
 	end
-
+	for _, descenda2nt in ipairs(model:GetDescendants()) do
+        if descenda2nt:IsA("Sound") descenda2nt.Name ~= "Repent" then
+            descendant.Volume = 0
+        end
+    end
 	model:SetAttribute("BeingBanished", true)
 	task.spawn(entityTable.RunCallback, entityTable, "OnCrucified", resist)
 
@@ -437,7 +441,9 @@ function CrucifixEntity(entityTable, tool)
 	-- Actions
 	if resist == false then
 		waitUntil(2)
-		TweenService:Create(entityPart, TweenInfo.new(3, Enum.EasingStyle.Back, Enum.EasingDirection.In), { CFrame = repentance.Entity.CFrame - Vector3.new(0, 25, 0) }):Play()
+		TweenService:Create(entityPart, TweenInfo.new(6, Enum.EasingStyle.Back, Enum.EasingDirection.In), { 
+				CFrame = repentance.Entity.CFrame - Vector3.new(0, 50, 0) 
+			}):Play()
 		waitUntil(6.75)
 	else
 		waitUntil(4)

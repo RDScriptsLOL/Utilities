@@ -351,8 +351,8 @@ function CrucifixEntity(entityTable, tool)
 		end
 	end
 	for _, descenda2nt in ipairs(model:GetDescendants()) do
-        if descenda2nt:IsA("Sound") descenda2nt.Name ~= "Repent" then
-            descendant.Volume = 0
+        if descenda2nt:IsA("Sound") and descenda2nt.Name ~= "Repent" then
+            descenda2nt.Volume = 0
         end
     end
 	model:SetAttribute("BeingBanished", true)

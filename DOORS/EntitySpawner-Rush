@@ -896,6 +896,14 @@ spawner.Create = function(config)
                         UnlockAchievement(surviveAchievement, "Survive", config)
                     end
 				end
+			end,
+			DeathHints = function(self)
+				if not self.Config then
+					return nil
+				end
+				gameStats["Player_".. localPlayer.Name].Total.DeathCause.Value = self.Config.Model.Name
+				SetDeathHints(self)
+				return self.Config.Death
 			end
 		}
 		

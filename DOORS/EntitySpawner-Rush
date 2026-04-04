@@ -296,8 +296,6 @@ function UnlockAchievement(achievement, achievementType, config)
     
     writefile(achievementFile, dataString)
     
-    local achievementInfo = 
-
 	if achievementGiver then
         achievementGiver({
 			Title = title,

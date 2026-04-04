@@ -296,16 +296,25 @@ function UnlockAchievement(achievement, achievementType, config)
     
     writefile(achievementFile, dataString)
     
-    local achievementInfo = {
-        Title = title,
-        Desc = achievement.Desc,
-        Reason = achievement.Reason,
-        Image = achievement.Image,
-        Prize = {}
-    }
+    local achievementInfo = 
 
 	if achievementGiver then
-        achievementGiver(achievementInfo)
+        achievementGiver({
+			Title = title,
+			Desc = achievement.Desc,
+			Reason = achievement.Reason,
+			Image = achievement.Image,
+			Prize = {}
+		})
+	else 
+		local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
+		achievementGiver({
+			Title = title,
+			Desc = achievement.Desc,
+			Reason = achievement.Reason,
+			Image = achievement.Image,
+			Prize = {}
+		})
     end
 end
 

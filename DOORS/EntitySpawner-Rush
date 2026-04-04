@@ -296,26 +296,18 @@ function UnlockAchievement(achievement, achievementType, config)
     
     writefile(achievementFile, dataString)
     
-	if achievementGiver then 
-		print("Achievement is working")
-        achievementGiver({
-			Title = title,
-			Desc = achievement.Desc,
-			Reason = achievement.Reason,
-			Image = achievement.Image,
-			Prize = {}
-		})
-	else  
-		print("Achievement not working")
-		local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
-		achievementGiver({
-			Title = title,
-			Desc = achievement.Desc,
-			Reason = achievement.Reason,
-			Image = achievement.Image,
-			Prize = {}
-		})
-    end
+	if not achievementGiver then
+		achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
+	end
+	
+	print("Achievement is working")
+	achievementGiver({
+		Title = title,
+		Desc = achievement.Desc,
+		Reason = achievement.Reason,
+		Image = achievement.Image,
+		Prize = {}
+	})
 end
 
 function PlayerHasItemEquipped(name)

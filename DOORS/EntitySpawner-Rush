@@ -303,7 +303,8 @@ function UnlockAchievement(achievement, achievementType, config)
         Image = achievement.Image,
         Prize = {}
     }
-    
+	
+    local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
     achievementGiver(achievementInfo)
 end
 

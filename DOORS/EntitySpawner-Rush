@@ -296,7 +296,8 @@ function UnlockAchievement(achievement, achievementType, config)
     
     writefile(achievementFile, dataString)
     
-	if achievementGiver then
+	if achievementGiver then 
+		print("Achievement is working")
         achievementGiver({
 			Title = title,
 			Desc = achievement.Desc,
@@ -304,7 +305,8 @@ function UnlockAchievement(achievement, achievementType, config)
 			Image = achievement.Image,
 			Prize = {}
 		})
-	else 
+	else  
+		print("Achievement not working")
 		local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
 		achievementGiver({
 			Title = title,

@@ -637,8 +637,7 @@ function DamagePlayer(entityTable)
 	if config.Damage.Enabled then   
 		if localHum.Health > 0 and not PlayerIsProtected() then 
 			local deathAchievement = config.Achievements.Death
-	
-			if config.Damage.Amount == math.huge then  
+			if config.Damage.Amount == math.huge then 
 				UnlockAchievement(deathAchievement, "Death", config)
 				SetDeathHints(entityTable)
 				if replicatesignal then 
@@ -648,24 +647,26 @@ function DamagePlayer(entityTable)
 					localPlayer:SetAttribute("Alive", false)
 				end
 				task.spawn(entityTable.RunCallback, entityTable, "OnDamagePlayer", 0, 0, false)
-			elseif config.Damage.Amount > 0 then  
+			elseif config.Damage.Amount > 0 then 
 				local newHealth
-				if config.Damage.Random.Enabled then  
-					local MinDamage, MaxDamage
-					if config.Damage.Random.Min > 0 then
-						MinDamage = config.Damage.Random.Min
+				local newMaxHealth
+				if config.Damage.Random.Enabled then 
+					if config.Damage.MaxHealth then 
+						local randomPercent = math.random(config.Damage.Random.Min, config.Damage.Random.Max) / 100
+						newMaxHealth = localHum.MaxHealth * (1 - randomPercent)
+					else 
+						local randomPercent = math.random(config.Damage.Random.Min, config.Damage.Random.Max) / 100
+						newHealth = localHum.Health - (localHum.MaxHealth * randomPercent)
 					end
-					if config.Damage.Random.Max > config.Damage.Random.Min then
-						MaxDamage = config.Damage.Random.Min
-					end
-					newHealth = math.random(MinDamage, MaxDamage)
+				elseif config.Damage.MaxHealth then
+					newMaxHealth = localHum.MaxHealth - (localHum.MaxHealth * (config.Damage.Amount / 100))
 				else 
-					newHealth = config.Damage.Amount
+					newHealth = localHum.Health - (localHum.MaxHealth * (config.Damage.Amount / 100))
 				end
-				if config.Damage.MaxHeath > 0 then 
-					localHum.MaxHealth = localHum.MaxHealth - newHealth
-				else
-					if localHum.Health <= config.Damage.Amount then 
+				if config.Damage.MaxHealth then
+					if newMaxHealth > 0  then 
+						localHum.MaxHealth = newMaxHealth
+					else
 						UnlockAchievement(deathAchievement, "Death", config)
 						SetDeathHints(entityTable)
 						if replicatesignal then 
@@ -674,12 +675,23 @@ function DamagePlayer(entityTable)
 							localHum.Health = 0
 							localPlayer:SetAttribute("Alive", false)
 						end
-					else 
-						localHum.Health = localHum.Health - newHealth
+					end
+				else 
+					if newHealth > 0 then 
+						localHum.Health = newHealth
+					else
+						UnlockAchievement(deathAchievement, "Death", config)
+						SetDeathHints(entityTable)
+						if replicatesignal then 
+							replicatesignal(localPlayer.Kill)
+						else 
+							localHum.Health = 0
+							localPlayer:SetAttribute("Alive", false)
+						end
 					end
 				end
-				task.spawn(entityTable.RunCallback, entityTable, "OnDamagePlayer", 0, 0, false)
 			end
+			task.spawn(entityTable.RunCallback, entityTable, "OnDamagePlayer", 0, 0, false)
 		end
 	end
 end

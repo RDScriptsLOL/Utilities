@@ -624,8 +624,10 @@ function SetDeathHints(entityTable)
 	
 	if #deathHints > 0 then
 		if firesignal then 
-			task.wait(1)
-			firesignal(remotesFolder.DeathHint.OnClientEvent, deathHints, deathType)
+			task.spawn(function()
+				task.wait(1)
+				firesignal(remotesFolder.DeathHint.OnClientEvent, deathHints, deathType)
+			end)
 		else
 			warn("firesignal not supported, ignore death hints.")
 		end

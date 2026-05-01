@@ -300,7 +300,6 @@ function UnlockAchievement(achievement, achievementType, config)
 		achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RDScriptsLOL/Utilities/main/DOORS/Achievements"))()
 	end
 	
-	print("Achievement is working")
 	achievementGiver({
 		Title = title,
 		Desc = achievement.Desc,
@@ -624,7 +623,8 @@ function SetDeathHints(entityTable)
 	end
 	
 	if #deathHints > 0 then
-		if firesignal then
+		if firesignal then 
+			task.wait(1)
 			firesignal(remotesFolder.DeathHint.OnClientEvent, deathHints, deathType)
 		else
 			warn("firesignal not supported, ignore death hints.")
@@ -642,7 +642,7 @@ function DamagePlayer(entityTable)
 			if config.Damage.Amount == math.huge then 
 				UnlockAchievement(deathAchievement, "Death", config)
 				SetDeathHints(entityTable)
-				if replicatesignal then 
+				if replicatesignal then
 					replicatesignal(localPlayer.Kill)
 				else 
 					localHum.Health = 0

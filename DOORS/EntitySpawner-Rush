@@ -337,12 +337,7 @@ function CrucifixEntity(entityTable, tool)
 		if tool and tool.Parent == localChar then
 			tool:Destroy()
 		end
-		task.spawn(function()
-			localChar:SetAttribute("Stunned", true)
-			task.wait(0.01)
-			localChar:SetAttribute("Stunned", false)
-		end)
-		
+		localHum:UnequipTools()
 		
 		local soundInstances = {}
 		for _, descendant in ipairs(model:GetDescendants()) do

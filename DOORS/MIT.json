@@ -42,10 +42,31 @@
                 "oof"
             ],
             "BackgroundColor": "Color3.fromRGB(255, 255, 0)",
-            "StrokeColor": "Color3.fromRGB(255, 255, 0)",
+            "StrokeColor": "Color3.fromRGB(255, 255, 0",
             "TextColor": "Color3.fromRGB(255, 255, 0)",
             "Type": "Mode",
             "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            },
+            "Multiple": {
+                "Degenerate": [
+                    "Guestly"
+                ]
+            }
+        },
+        "Fragmented": {
+            "Name": "Fragmented",
+            "Text": "Fragmented",
+            "Creator": [
+                "Jabiss"
+            ],
+            "BackgroundColor": "Color3.fromRGB(238, 0, 255)",
+            "StrokeColor": "Color3.fromRGB(238, 0, 255)",
+            "TextColor": "Color3.fromRGB(238, 0, 255)",
+            "Type": "Mode",
+            "Status": "Fix",
             "Penalties": {
                 "NoRevive": false,
                 "NoAdminPanel": false

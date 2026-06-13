@@ -603,6 +603,20 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Overriden": {
+            "Name": "Overriden",
+            "Text": "Overriden",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(41, 123, 158)",
+            "StrokeColor": "Color3.fromRGB(41, 123, 158)",
+            "TextColor": "Color3.fromRGB(41, 123, 158)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

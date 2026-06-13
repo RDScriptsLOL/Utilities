@@ -492,6 +492,37 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Madman": {
+            "Name": "Madman",
+            "Text": "Madman",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(129, 44, 90)",
+            "StrokeColor": "Color3.fromRGB(129, 44, 90)",
+            "TextColor": "Color3.fromRGB(129, 44, 90)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Malfunction": {
+            "Name": "Malfunction",
+            "Text": "Malfunction",
+            "Creator": [
+                "Guest",
+                "Alot"
+            ],
+            "BackgroundColor": "Color3.fromRGB(97, 83, 208)",
+            "StrokeColor": "Color3.fromRGB(97, 83, 208)",
+            "TextColor": "Color3.fromRGB(97, 83, 208)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

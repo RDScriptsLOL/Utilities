@@ -39,7 +39,7 @@
             "Name": "Impossible",
             "Text": "Impossible",
             "Creator": [
-                "oof"
+                "Oof"
             ],
             "BackgroundColor": "Color3.fromRGB(255, 255, 0)",
             "StrokeColor": "Color3.fromRGB(255, 255, 0",
@@ -228,6 +228,68 @@
             "BackgroundColor": "Color3.fromRGB(61, 133, 99)",
             "StrokeColor": "Color3.fromRGB(61, 133, 99)",
             "TextColor": "Color3.fromRGB(61, 133, 99)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Degenerate": {
+            "Name": "Degenerate",
+            "Text": "Degenerate",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(165, 134, 24)",
+            "StrokeColor": "Color3.fromRGB(165, 134, 24)",
+            "TextColor": "Color3.fromRGB(165, 134, 24)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Endless": {
+            "Name": "Endless",
+            "Text": "Endless",
+            "Creator": [
+                "zavaled"
+            ],
+            "BackgroundColor": "Color3.fromRGB(190, 236, 24)",
+            "StrokeColor": "Color3.fromRGB(190, 236, 24)",
+            "TextColor": "Color3.fromRGB(190, 236, 24)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Extreme": {
+            "Name": "Extreme",
+            "Text": "Extreme",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(10, 226, 255)",
+            "StrokeColor": "Color3.fromRGB(10, 226, 255)",
+            "TextColor": "Color3.fromRGB(10, 226, 255)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Fear": {
+            "Name": "Fear",
+            "Text": "Fear",
+            "Creator": [
+                "Oof"
+            ],
+            "BackgroundColor": "Color3.fromRGB(232, 225, 17)",
+            "StrokeColor": "Color3.fromRGB(232, 225, 17)",
+            "TextColor": "Color3.fromRGB(232, 225, 17)",
             "Type": "Mode",
             "Status": "Active",
             "Penalties": {

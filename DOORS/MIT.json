@@ -693,6 +693,22 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Troll": {
+            "Name": "Troll",
+            "Text": "Troll",
+            "Creator": [
+                "Depth"
+            ],
+            "BackgroundColor": "Color3.fromRGB(255, 255, 255)",
+            "StrokeColor": "Color3.fromRGB(255, 255, 255)",
+            "TextColor": "Color3.fromRGB(255, 255, 255)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

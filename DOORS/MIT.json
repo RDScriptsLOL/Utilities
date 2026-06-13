@@ -183,6 +183,41 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Creepy": {
+            "Name": "Creepy",
+            "Text": "Creepy",
+            "Creator": [
+                "DripCapybara",
+                "Cheeser",
+                "SilenceHardcore",
+                "LocalPlayer"
+            ],
+            "BackgroundColor": "Color3.fromRGB(34, 211, 102)",
+            "StrokeColor": "Color3.fromRGB(34, 211, 102)",
+            "TextColor": "Color3.fromRGB(34, 211, 102)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Darkness": {
+            "Name": "Darkness",
+            "Text": "Darkness",
+            "Creator": [
+                "Zixsoed"
+            ],
+            "BackgroundColor": "Color3.fromRGB(0, 0, 0)",
+            "StrokeColor": "Color3.fromRGB(0, 0, 0)",
+            "TextColor": "Color3.fromRGB(0, 0, 0)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

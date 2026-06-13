@@ -1,5 +1,26 @@
 {
     "Mode": {
+        "Impossible": {
+            "Name": "Impossible",
+            "Text": "Impossible",
+            "Creator": [
+                "oof"
+            ],
+            "BackgroundColor": "Color3.fromRGB(255, 255, 0)",
+            "StrokeColor": "Color3.fromRGB(255, 255, 0",
+            "TextColor": "Color3.fromRGB(255, 255, 0)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            },
+            "Multiple": {
+                "Degenerate": [
+                    "Guestly"
+                ]
+            }
+        },
         "Hardcore": {
             "Name": "Hardcore",
             "Text": "Hardcore",
@@ -34,27 +55,6 @@
             },
             "Type": "Mode",
             "Status": "Active"
-        },
-        "Impossible": {
-            "Name": "Impossible",
-            "Text": "Impossible",
-            "Creator": [
-                "oof"
-            ],
-            "BackgroundColor": "Color3.fromRGB(255, 255, 0)",
-            "StrokeColor": "Color3.fromRGB(255, 255, 0",
-            "TextColor": "Color3.fromRGB(255, 255, 0)",
-            "Type": "Mode",
-            "Status": "Active",
-            "Penalties": {
-                "NoRevive": false,
-                "NoAdminPanel": false
-            },
-            "Multiple": {
-                "Degenerate": [
-                    "Guestly"
-                ]
-            }
         },
         "Fragmented": {
             "Name": "Fragmented",

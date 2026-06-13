@@ -1033,6 +1033,51 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Cizinuness": {
+            "Name": "Cizinuness",
+            "Text": "Cizinuness",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(135, 167, 181)",
+            "StrokeColor": "Color3.fromRGB(135, 167, 181)",
+            "TextColor": "Color3.fromRGB(135, 167, 181)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Dreamcore": {
+            "Name": "Dreamcore",
+            "Text": "Dreamcore",
+            "Creator": [
+                "Guestly",
+                "VoorPr0"
+            ],
+            "BackgroundColor": "Color3.fromRGB(153, 204, 159)",
+            "StrokeColor": "Color3.fromRGB(153, 204, 159)",
+            "TextColor": "Color3.fromRGB(153, 204, 159)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Cataclysm": {
+            "Name": "Cataclysm",
+            "Text": "Cataclysm",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(225, 137, 137)",
+            "StrokeColor": "Color3.fromRGB(225, 137, 137)",
+            "TextColor": "Color3.fromRGB(225, 137, 137)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

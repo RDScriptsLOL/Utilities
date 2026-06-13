@@ -296,6 +296,42 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Forgotten": {
+            "Name": "Forgotten",
+            "Text": "Forgotten",
+            "Creator": [
+                "Official_Artemis",
+                "Kotyara19k",
+                "Vickokokoko",
+                "Ame",
+                "Johnny39871"
+            ],
+            "BackgroundColor": "Color3.fromRGB(175, 157, 157)",
+            "StrokeColor": "Color3.fromRGB(175, 157, 157)",
+            "TextColor": "Color3.fromRGB(175, 157, 157)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Frightening": {
+            "Name": "Frightening",
+            "Text": "Frightening",
+            "Creator": [
+                "Nys195"
+            ],
+            "BackgroundColor": "Color3.fromRGB(33, 65, 84)",
+            "StrokeColor": "Color3.fromRGB(33, 65, 84)",
+            "TextColor": "Color3.fromRGB(33, 65, 84)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

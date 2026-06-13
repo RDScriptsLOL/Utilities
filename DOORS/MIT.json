@@ -663,6 +663,22 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Survival": {
+            "Name": "Survival",
+            "Text": "Survival",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(253, 242, 242)",
+            "StrokeColor": "Color3.fromRGB(253, 242, 242)",
+            "TextColor": "Color3.fromRGB(253, 242, 242)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

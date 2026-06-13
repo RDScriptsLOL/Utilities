@@ -812,12 +812,10 @@
         "Hallucination": {
             "Name": "Hallucination",
             "Text": "Hallucination",
-            "Creator": [
-                "Guestly"
-            ],
-            "BackgroundColor": "Color3.fromRGB(85, 127, 211)",
-            "StrokeColor": "Color3.fromRGB(85, 127, 211)",
-            "TextColor": "Color3.fromRGB(85, 127, 211)",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(255, 56, 219)",
+            "StrokeColor": "Color3.fromRGB(255, 56, 219)",
+            "TextColor": "Color3.fromRGB(255, 56, 219)",
             "Type": "Mode",
             "Status": "Active",
             "Penalties": {

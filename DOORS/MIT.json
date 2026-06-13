@@ -71,6 +71,38 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Birthday": {
+            "Name": "Birthday",
+            "Text": "Birthday",
+            "Creator": [
+                "Plamen"
+            ],
+            "BackgroundColor": "Color3.fromRGB(255, 0, 149)",
+            "StrokeColor": "Color3.fromRGB(255, 0, 149)",
+            "TextColor": "Color3.fromRGB(255, 0, 149)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Astonishment": {
+            "Name": "Astonishment",
+            "Text": "Astonishment",
+            "Creator": [
+                "Guestly"
+            ],
+            "BackgroundColor": "Color3.fromRGB(240, 36, 255)",
+            "StrokeColor": "Color3.fromRGB(240, 36, 255)",
+            "TextColor": "Color3.fromRGB(240, 36, 255)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

@@ -569,6 +569,23 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Nightmare": {
+            "Name": "Nightmare",
+            "Text": "Nightmare",
+            "Creator": [
+                "Kodbol",
+                "Asif"
+            ],
+            "BackgroundColor": "Color3.fromRGB(41, 36, 36)",
+            "StrokeColor": "Color3.fromRGB(41, 36, 36)",
+            "TextColor": "Color3.fromRGB(41, 36, 36)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

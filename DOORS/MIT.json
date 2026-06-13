@@ -654,25 +654,9 @@
             "Creator": [
                 "Guest"
             ],
-            "BackgroundColor": "Color3.fromRGB(80, 158, 242)",
-            "StrokeColor": "Color3.fromRGB(80, 158, 242)",
-            "TextColor": "Color3.fromRGB(80, 158, 242)",
-            "Type": "Mode",
-            "Status": "Active",
-            "Penalties": {
-                "NoRevive": false,
-                "NoAdminPanel": false
-            }
-        },
-        "Survival": {
-            "Name": "Survival",
-            "Text": "Survival",
-            "Creator": [
-                "Guest"
-            ],
-            "BackgroundColor": "Color3.fromRGB(255, 255, 255)",
-            "StrokeColor": "Color3.fromRGB(255, 255, 255)",
-            "TextColor": "Color3.fromRGB(255, 255, 255)",
+            "BackgroundColor": "Color3.fromRGB(97, 118, 204)",
+            "StrokeColor": "Color3.fromRGB(97, 118, 204)",
+            "TextColor": "Color3.fromRGB(97, 118, 204)",
             "Type": "Mode",
             "Status": "Active",
             "Penalties": {

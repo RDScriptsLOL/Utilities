@@ -921,6 +921,39 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Critazy": {
+            "Name": "Critazy",
+            "Text": "Critazy",
+            "Creator": [
+                "RealblueYT"
+            ],
+            "BackgroundColor": "Color3.fromRGB(107, 210, 245)",
+            "StrokeColor": "Color3.fromRGB(107, 210, 245)",
+            "TextColor": "Color3.fromRGB(107, 210, 245)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Devil": {
+            "Name": "Devil",
+            "Text": "Devil",
+            "Creator": [
+                "smile",
+                "tuffmu"
+            ],
+            "BackgroundColor": "Color3.fromRGB(172, 63, 202)",
+            "StrokeColor": "Color3.fromRGB(172, 63, 202)",
+            "TextColor": "Color3.fromRGB(172, 63, 202)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

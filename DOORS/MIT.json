@@ -332,6 +332,38 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Frozen": {
+            "Name": "Frozen",
+            "Text": "Frozen",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(214, 159, 159)",
+            "StrokeColor": "Color3.fromRGB(214, 159, 159)",
+            "TextColor": "Color3.fromRGB(214, 159, 159)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Romer": {
+            "Name": "Romer",
+            "Text": "Romer",
+            "Creator": [
+                "cat_personohio"
+            ],
+            "BackgroundColor": "Color3.fromRGB(184, 107, 107)",
+            "StrokeColor": "Color3.fromRGB(184, 107, 107)",
+            "TextColor": "Color3.fromRGB(184, 107, 107)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

@@ -679,6 +679,20 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Terror": {
+            "Name": "Terror",
+            "Text": "Terror",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(143, 66, 66)",
+            "StrokeColor": "Color3.fromRGB(143, 66, 66)",
+            "TextColor": "Color3.fromRGB(143, 66, 66)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

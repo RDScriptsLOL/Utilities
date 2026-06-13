@@ -34,29 +34,6 @@
             },
             "Type": "Mode",
             "Status": "Active"
-        },
-        "try": {
-            "Name": "t",
-            "Text": "test",
-            "Creator": [
-                "test",
-                "test222"
-            ],
-            "BackgroundColor": "Color3.fromRGB(255, 0, 0)",
-            "StrokeColor": "Color3.fromRGB(255, 0, 0)",
-            "TextColor": "Color3.fromRGB(255, 0, 0)",
-            "Type": "Mode",
-            "Status": "Active",
-            "Multiple": {
-                "Official": [],
-                "Restarted": [],
-                "Reignited": [],
-                "Bad": []
-            },
-            "Penalties": {
-                "NoRevive": true,
-                "NoAdminPanel": true
-            }
         }
     },
     "Item": {},

@@ -617,6 +617,36 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Ransom": {
+            "Name": "Ransom",
+            "Text": "Ransom",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(108, 126, 22)",
+            "StrokeColor": "Color3.fromRGB(108, 126, 22)",
+            "TextColor": "Color3.fromRGB(108, 126, 22)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Strange": {
+            "Name": "Strange",
+            "Text": "Strange",
+            "Creator": [
+                "Anzor5458"
+            ],
+            "BackgroundColor": "Color3.fromRGB(253, 247, 63)",
+            "StrokeColor": "Color3.fromRGB(253, 247, 63)",
+            "TextColor": "Color3.fromRGB(253, 247, 63)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

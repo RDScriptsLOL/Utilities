@@ -35,26 +35,27 @@
             "Type": "Mode",
             "Status": "Active"
         },
-        "test": {
-            "Name": "test",
-            "Text": "test",
+        "try": {
+            "Name": "try",
+            "Text": "try",
             "Creator": [
-                "test",
-                "test"
+                "try"
             ],
-            "BackgroundColor": "Color3.fromRGB(255, 0, 0)",
-            "StrokeColor": "Color3.fromRGB(255, 0, 0)",
-            "TextColor": "Color3.fromRGB(255, 0, 0)",
+            "BackgroundColor": "Color3.fromRGB(255,255,255)",
+            "StrokeColor": "Color3.fromRGB(255,255,255)",
+            "TextColor": "Color3.fromRGB(255,255,255)",
             "Type": "Mode",
             "Status": "Active",
             "Multiple": {
-                "Official": [],
+                "Official": [
+                    "1111"
+                ],
                 "Restarted": [],
                 "Reignited": [],
                 "Bad": []
             },
             "Penalties": {
-                "NoRevive": false,
+                "NoRevive": true,
                 "NoAdminPanel": true
             }
         }

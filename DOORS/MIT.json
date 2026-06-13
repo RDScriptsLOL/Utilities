@@ -3,17 +3,35 @@
         "Hardcore": {
             "Name": "Hardcore",
             "Text": "Hardcore",
-            "Creator": ["Noonie","Ping"],
+            "Creator": [
+                "Noonie",
+                "Ping"
+            ],
             "BackgroundColor": "Color3.fromRGB(255, 0, 0)",
             "StrokeColor": "Color3.fromRGB(255, 0, 0)",
             "TextColor": "Color3.fromRGB(255, 0, 0)",
             "Multiple": {
-                "Official": ["Noonie","Ping"],
-                "Restarted": ["FOCUSED_LIGHT"],
-                "Reignited": ["pyxlfunkin", "Dripocapy", "March"],
-                "Bad": ["Noonie","Ping"]
+                "Official": [
+                    "Noonie",
+                    "Ping"
+                ],
+                "Restarted": [
+                    "FOCUSED_LIGHT"
+                ],
+                "Reignited": [
+                    "pyxlfunkin",
+                    "Dripocapy",
+                    "March"
+                ],
+                "Bad": [
+                    "Noonie",
+                    "Ping"
+                ]
             },
-            "Penalties": {"NoRevive": true,"NoAdminPanel": true},
+            "Penalties": {
+                "NoRevive": true,
+                "NoAdminPanel": true
+            },
             "Type": "Mode",
             "Status": "Active"
         }

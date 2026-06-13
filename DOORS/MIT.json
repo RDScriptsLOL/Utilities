@@ -709,6 +709,38 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Unfair": {
+            "Name": "Unfair",
+            "Text": "Unfair",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(158, 199, 219)",
+            "StrokeColor": "Color3.fromRGB(158, 199, 219)",
+            "TextColor": "Color3.fromRGB(158, 199, 219)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Unnamed": {
+            "Name": "Unnamed",
+            "Text": "Unnamed",
+            "Creator": [
+                "Light's Group",
+                "z367",
+                "DripCapybara"
+            ],
+            "BackgroundColor": "Color3.fromRGB(93, 67, 152)",
+            "StrokeColor": "Color3.fromRGB(93, 67, 152)",
+            "TextColor": "Color3.fromRGB(93, 67, 152)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

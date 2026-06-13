@@ -364,6 +364,85 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Hard": {
+            "Name": "Hard",
+            "Text": "Hard",
+            "Creator": [
+                "Plamen"
+            ],
+            "BackgroundColor": "Color3.fromRGB(226, 18, 18)",
+            "StrokeColor": "Color3.fromRGB(226, 18, 18)",
+            "TextColor": "Color3.fromRGB(226, 18, 18)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Horror": {
+            "Name": "Horror",
+            "Text": "Horror",
+            "Creator": [
+                "Chrono"
+            ],
+            "BackgroundColor": "Color3.fromRGB(52, 45, 45)",
+            "StrokeColor": "Color3.fromRGB(52, 45, 45)",
+            "TextColor": "Color3.fromRGB(52, 45, 45)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Inferno": {
+            "Name": "Inferno",
+            "Text": "Inferno",
+            "Creator": [
+                "Anctarus#7105",
+                "Aboba228-Abobic"
+            ],
+            "BackgroundColor": "Color3.fromRGB(217, 186, 186)",
+            "StrokeColor": "Color3.fromRGB(217, 186, 186)",
+            "TextColor": "Color3.fromRGB(217, 186, 186)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "lsolation": {
+            "Name": "lsolation",
+            "Text": "lsolation",
+            "Creator": [
+                "Anzor"
+            ],
+            "BackgroundColor": "Color3.fromRGB(248, 216, 216)",
+            "StrokeColor": "Color3.fromRGB(248, 216, 216)",
+            "TextColor": "Color3.fromRGB(248, 216, 216)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Laver": {
+            "Name": "Laver",
+            "Text": "Laver",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(159, 27, 208)",
+            "StrokeColor": "Color3.fromRGB(159, 27, 208)",
+            "TextColor": "Color3.fromRGB(159, 27, 208)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

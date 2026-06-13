@@ -103,6 +103,22 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Cat": {
+            "Name": "Cat",
+            "Text": "Cat",
+            "Creator": [
+                "Noah"
+            ],
+            "BackgroundColor": "Color3.fromRGB(255, 56, 192)",
+            "StrokeColor": "Color3.fromRGB(255, 56, 192)",
+            "TextColor": "Color3.fromRGB(255, 56, 192)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

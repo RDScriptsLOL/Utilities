@@ -523,6 +523,38 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Mayhem": {
+            "Name": "Mayhem",
+            "Text": "Mayhem",
+            "Creator": [
+                "Ame"
+            ],
+            "BackgroundColor": "Color3.fromRGB(51, 109, 225)",
+            "StrokeColor": "Color3.fromRGB(51, 109, 225)",
+            "TextColor": "Color3.fromRGB(51, 109, 225)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Melting": {
+            "Name": "Melting",
+            "Text": "Melting",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(170, 68, 171)",
+            "StrokeColor": "Color3.fromRGB(170, 68, 171)",
+            "TextColor": "Color3.fromRGB(170, 68, 171)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

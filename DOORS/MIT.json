@@ -218,6 +218,22 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "DeadRails": {
+            "Name": "DeadRails",
+            "Text": "Dead Rails",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(61, 133, 99)",
+            "StrokeColor": "Color3.fromRGB(61, 133, 99)",
+            "TextColor": "Color3.fromRGB(61, 133, 99)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

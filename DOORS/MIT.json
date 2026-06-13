@@ -857,6 +857,70 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Roomy": {
+            "Name": "Roomy",
+            "Text": "Roomy",
+            "Creator": [
+                "FenzerPlayerPressure"
+            ],
+            "BackgroundColor": "Color3.fromRGB(193, 196, 199)",
+            "StrokeColor": "Color3.fromRGB(193, 196, 199)",
+            "TextColor": "Color3.fromRGB(193, 196, 199)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Scary": {
+            "Name": "Scary",
+            "Text": "Scary",
+            "Creator": [
+                "Rip_Silence"
+            ],
+            "BackgroundColor": "Color3.fromRGB(23, 84, 77)",
+            "StrokeColor": "Color3.fromRGB(23, 84, 77)",
+            "TextColor": "Color3.fromRGB(23, 84, 77)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Draco": {
+            "Name": "Draco",
+            "Text": "Draco",
+            "Creator": [
+                "Rip_Silence"
+            ],
+            "BackgroundColor": "Color3.fromRGB(50, 210, 90)",
+            "StrokeColor": "Color3.fromRGB(50, 210, 90)",
+            "TextColor": "Color3.fromRGB(50, 210, 90)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Baller": {
+            "Name": "Baller",
+            "Text": "Baller",
+            "Creator": [
+                "Zunxd"
+            ],
+            "BackgroundColor": "Color3.fromRGB(194, 226, 34)",
+            "StrokeColor": "Color3.fromRGB(194, 226, 34)",
+            "TextColor": "Color3.fromRGB(194, 226, 34)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

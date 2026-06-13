@@ -443,6 +443,55 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Limit": {
+            "Name": "Limit",
+            "Text": "Limit",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(255, 0, 0)",
+            "StrokeColor": "Color3.fromRGB(255, 0, 0)",
+            "TextColor": "Color3.fromRGB(255, 0, 0)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "LostRooms": {
+            "Name": "LostRooms",
+            "Text": "Lost Rooms",
+            "Creator": [
+                "Dripocapy"
+            ],
+            "BackgroundColor": "Color3.fromRGB(115, 134, 165)",
+            "StrokeColor": "Color3.fromRGB(115, 134, 165)",
+            "TextColor": "Color3.fromRGB(115, 134, 165)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Lunacy": {
+            "Name": "Lunacy",
+            "Text": "Lunacy",
+            "Creator": [
+                "Guestly",
+                "Vuivuiviu2",
+                "Nowhywhat",
+                "Voorpr0"
+            ],
+            "BackgroundColor": "Color3.fromRGB(81, 148, 95)",
+            "StrokeColor": "Color3.fromRGB(81, 148, 95)",
+            "TextColor": "Color3.fromRGB(81, 148, 95)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

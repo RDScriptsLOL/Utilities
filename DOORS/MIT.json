@@ -804,9 +804,58 @@
                 "NoAdminPanel": false
             },
             "Multiple": {
-                "Celestian": [
+                "Recreated": [
                     "Guestly"
                 ]
+            }
+        },
+        "Hallucination": {
+            "Name": "Hallucination",
+            "Text": "Hallucination",
+            "Creator": [
+                "Guestly"
+            ],
+            "BackgroundColor": "Color3.fromRGB(85, 127, 211)",
+            "StrokeColor": "Color3.fromRGB(85, 127, 211)",
+            "TextColor": "Color3.fromRGB(85, 127, 211)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Insanitas": {
+            "Name": "Insanitas",
+            "Text": "Insanitas",
+            "Creator": [
+                "Guestly",
+                "Vuivuiviu2"
+            ],
+            "BackgroundColor": "Color3.fromRGB(70, 135, 195)",
+            "StrokeColor": "Color3.fromRGB(70, 135, 195)",
+            "TextColor": "Color3.fromRGB(70, 135, 195)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Crazy": {
+            "Name": "Crazy",
+            "Text": "Crazy",
+            "Creator": [
+                "FenzerPlayerPressure"
+            ],
+            "BackgroundColor": "Color3.fromRGB(67, 107, 229)",
+            "StrokeColor": "Color3.fromRGB(67, 107, 229)",
+            "TextColor": "Color3.fromRGB(67, 107, 229)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
             }
         }
     },

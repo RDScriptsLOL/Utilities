@@ -1017,6 +1017,22 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Silence": {
+            "Name": "Silence",
+            "Text": "Silence",
+            "Creator": [
+                "Rip_Silence"
+            ],
+            "BackgroundColor": "Color3.fromRGB(25, 20, 20)",
+            "StrokeColor": "Color3.fromRGB(25, 20, 20)",
+            "TextColor": "Color3.fromRGB(25, 20, 20)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

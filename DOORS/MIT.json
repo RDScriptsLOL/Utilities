@@ -741,6 +741,38 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Viod": {
+            "Name": "Viod",
+            "Text": "Viod",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(0, 0, 0)",
+            "StrokeColor": "Color3.fromRGB(0, 0, 0)",
+            "TextColor": "Color3.fromRGB(0, 0, 0)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Voidness": {
+            "Name": "Voidness",
+            "Text": "Voidness",
+            "Creator": [
+                "Vuivuiviu2",
+                "Guestly",
+                "Voorpr0"
+            ],
+            "BackgroundColor": "Color3.fromRGB(6, 5, 5)",
+            "StrokeColor": "Color3.fromRGB(6, 5, 5)",
+            "TextColor": "Color3.fromRGB(6, 5, 5)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

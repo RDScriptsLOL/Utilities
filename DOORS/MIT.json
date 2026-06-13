@@ -119,6 +119,22 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "ReChaos": {
+            "Name": "ReChaos",
+            "Text": "Chaos Recall",
+            "Creator": [
+                "???"
+            ],
+            "BackgroundColor": "Color3.fromRGB(145, 43, 127)",
+            "StrokeColor": "Color3.fromRGB(145, 43, 127)",
+            "TextColor": "Color3.fromRGB(145, 43, 127)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

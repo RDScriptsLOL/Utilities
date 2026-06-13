@@ -10,6 +10,12 @@
             "BackgroundColor": "Color3.fromRGB(255, 0, 0)",
             "StrokeColor": "Color3.fromRGB(255, 0, 0)",
             "TextColor": "Color3.fromRGB(255, 0, 0)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": true,
+                "NoAdminPanel": true
+            },
             "Multiple": {
                 "Official": [
                     "Noonie",
@@ -27,13 +33,7 @@
                     "Noonie",
                     "Ping"
                 ]
-            },
-            "Penalties": {
-                "NoRevive": true,
-                "NoAdminPanel": true
-            },
-            "Type": "Mode",
-            "Status": "Active"
+            }
         },
         "Impossible": {
             "Name": "Impossible",

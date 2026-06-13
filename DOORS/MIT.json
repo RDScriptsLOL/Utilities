@@ -1078,6 +1078,20 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Sadness": {
+            "Name": "Sadness",
+            "Text": "Sadness",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(155, 85, 85)",
+            "StrokeColor": "Color3.fromRGB(155, 85, 85)",
+            "TextColor": "Color3.fromRGB(155, 85, 85)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

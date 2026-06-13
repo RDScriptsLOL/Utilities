@@ -647,6 +647,38 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Superiority": {
+            "Name": "Superiority",
+            "Text": "Superiority",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(80, 158, 242)",
+            "StrokeColor": "Color3.fromRGB(80, 158, 242)",
+            "TextColor": "Color3.fromRGB(80, 158, 242)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Survival": {
+            "Name": "Survival",
+            "Text": "Survival",
+            "Creator": [
+                "Guest"
+            ],
+            "BackgroundColor": "Color3.fromRGB(255, 255, 255)",
+            "StrokeColor": "Color3.fromRGB(255, 255, 255)",
+            "TextColor": "Color3.fromRGB(255, 255, 255)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

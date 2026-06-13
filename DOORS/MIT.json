@@ -773,6 +773,41 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "UltraHard": {
+            "Name": "UltraHard",
+            "Text": "Ultra Hard",
+            "Creator": [
+                "Zunxd"
+            ],
+            "BackgroundColor": "Color3.fromRGB(80, 122, 206)",
+            "StrokeColor": "Color3.fromRGB(80, 122, 206)",
+            "TextColor": "Color3.fromRGB(80, 122, 206)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
+        },
+        "Hazy": {
+            "Name": "Hazy",
+            "Text": "Hazy",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(116, 170, 49)",
+            "StrokeColor": "Color3.fromRGB(116, 170, 49)",
+            "TextColor": "Color3.fromRGB(116, 170, 49)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            },
+            "Multiple": {
+                "Celestian": [
+                    "Guestly"
+                ]
+            }
         }
     },
     "Item": {},

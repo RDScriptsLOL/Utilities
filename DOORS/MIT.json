@@ -1114,6 +1114,17 @@
             }
         }
     },
-    "Item": {},
+    "Item": {
+        "Scanner": {
+            "Name": "Scanner",
+            "Text": "Scanner",
+            "BackgroundColor": "Color3.fromRGB(85, 170, 127)",
+            "TextColor": "Color3.fromRGB(85, 170, 127)",
+            "Image": "96172341109867",
+            "Creator": [],
+            "Type": "Item",
+            "Status": "Active"
+        }
+    },
     "Theme": {}
 }

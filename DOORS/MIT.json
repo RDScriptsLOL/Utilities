@@ -809,20 +809,6 @@
                 ]
             }
         },
-        "Hallucination": {
-            "Name": "Hallucination",
-            "Text": "Hallucination",
-            "Creator": [],
-            "BackgroundColor": "Color3.fromRGB(181, 86, 225)",
-            "StrokeColor": "Color3.fromRGB(181, 86, 225)",
-            "TextColor": "Color3.fromRGB(181, 86, 225)",
-            "Type": "Mode",
-            "Status": "Active",
-            "Penalties": {
-                "NoRevive": false,
-                "NoAdminPanel": false
-            }
-        },
         "Insanitas": {
             "Name": "Insanitas",
             "Text": "Insanitas",
@@ -1103,6 +1089,28 @@
             "Penalties": {
                 "NoRevive": false,
                 "NoAdminPanel": false
+            }
+        },
+        "Hallucination": {
+            "Name": "Hallucination",
+            "Text": "Hallucination",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(181, 86, 225)",
+            "StrokeColor": "Color3.fromRGB(181, 86, 225)",
+            "TextColor": "Color3.fromRGB(181, 86, 225)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            },
+            "Multiple": {
+                "Easy": [
+                    "???"
+                ],
+                "Hard": [
+                    "???"
+                ]
             }
         }
     },

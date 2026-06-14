@@ -813,9 +813,9 @@
             "Name": "Hallucination",
             "Text": "Hallucination",
             "Creator": [],
-            "BackgroundColor": "Color3.fromRGB(215, 35, 35)",
-            "StrokeColor": "Color3.fromRGB(215, 35, 35)",
-            "TextColor": "Color3.fromRGB(215, 35, 35)",
+            "BackgroundColor": "Color3.fromRGB(181, 86, 225)",
+            "StrokeColor": "Color3.fromRGB(181, 86, 225)",
+            "TextColor": "Color3.fromRGB(181, 86, 225)",
             "Type": "Mode",
             "Status": "Active",
             "Penalties": {

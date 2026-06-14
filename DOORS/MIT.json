@@ -1090,6 +1090,20 @@
                 "NoRevive": false,
                 "NoAdminPanel": false
             }
+        },
+        "Cataclysmic": {
+            "Name": "Cataclysmic",
+            "Text": "Cataclysmic",
+            "Creator": [],
+            "BackgroundColor": "Color3.fromRGB(184, 50, 50)",
+            "StrokeColor": "Color3.fromRGB(184, 50, 50)",
+            "TextColor": "Color3.fromRGB(184, 50, 50)",
+            "Type": "Mode",
+            "Status": "Active",
+            "Penalties": {
+                "NoRevive": false,
+                "NoAdminPanel": false
+            }
         }
     },
     "Item": {},

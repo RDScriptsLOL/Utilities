@@ -38,19 +38,18 @@
         "Impossible": {
             "Name": "Impossible",
             "Text": "Impossible",
+            "BackgroundColor": "Color3.fromRGB(255, 255, 0)",
+            "TextColor": "Color3.fromRGB(255, 255, 0)",
+            "StrokeColor": "Color3.fromRGB(255, 255, 0",
             "Creator": [
                 "Oof"
             ],
-            "BackgroundColor": "Color3.fromRGB(255, 255, 0)",
-            "StrokeColor": "Color3.fromRGB(255, 255, 0",
-            "TextColor": "Color3.fromRGB(255, 255, 0)",
             "Type": "Mode",
             "Status": "Active",
-            "Penalties": {
-                "NoRevive": false,
-                "NoAdminPanel": false
-            },
             "Multiple": {
+                "Official": [
+                    "Oof"
+                ],
                 "Degenerate": [
                     "Guestly"
                 ]

@@ -8,7 +8,7 @@ local TweenService = game:GetService("TweenService")
 local localPlayer = Players.LocalPlayer
 local localChar = localPlayer.Character or localPlayer.CharacterAdded:Wait()
 local localHum = localChar:WaitForChild("Humanoid")
-local localCollision = localChar:WaitForChild("Collision")
+local localCollision = localChar:WaitForChild("Collision", 10)
 local localCamera = workspace.CurrentCamera
 local playerGui = localPlayer:WaitForChild("PlayerGui")
 local gameStats = ReplicatedStorage:WaitForChild("GameStats")
@@ -163,7 +163,7 @@ function OnCharacterAdded(char)
 	lastRespawn = tick()
 	localChar = char
 	localHum = char:WaitForChild("Humanoid")
-	localCollision = char:WaitForChild("Collision")
+	localCollision = char:WaitForChild("Collision", 10)
 end
 
 function GetCurrentRoom(latest)

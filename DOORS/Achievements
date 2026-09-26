@@ -7,8 +7,7 @@ local GlobalUI = PlayerGui:FindFirstChild("GlobalUI") if not GlobalUI then retur
 local AchievementsHolder = GlobalUI:FindFirstChild("AchievementsHolder") if not AchievementsHolder then return end
 
 local ModuleScripts = {
-    AchievementUnlock = require(PlayerGui:FindFirstChild("AchievementUnlock", true)),
-    Achievements = require(ReplicatedStorage.ModulesShared.Achievements)
+    AchievementUnlock = require(PlayerGui:FindFirstChild("AchievementUnlock", true))
 }
 local Default = {
     Title = "",
@@ -24,9 +23,8 @@ return function(Info)
             Info[i] = v
         end
     end
-    local Stuff = ModuleScripts.Achievements.SpecialQATester
     local Old = Stuff.GetInfo
     Stuff.GetInfo = newcclosure(function() return Info end)
-    ModuleScripts.AchievementUnlock(nil, Stuff.Name)
+    ModuleScripts.AchievementUnlock(nil, "nil")
     Stuff.GetInfo = Old
 end
